@@ -1,0 +1,6 @@
+{
+    "react-native-tools.networkInspector.consoleLogsColorTheme": "Dark",
+    "react-native.workspace.exclude": [
+        "node_modules"
+    ]
+}
