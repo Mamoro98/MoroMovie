@@ -3,6 +3,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import HomeScreen from "../screens/Home";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import MovieScreen from "../screens/MovieScreen";
+import PersonScreen from "../screens/PersonScreen";
+import SearchScreen from "../screens/SearchScreen";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -26,6 +29,27 @@ export default function AppNav() {
         <Stack.Screen
           name="Home2"
           component={HomeTabs}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Movie"
+          component={MovieScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Person"
+          component={PersonScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Search"
+          component={SearchScreen}
           options={{
             headerShown: false,
           }}
