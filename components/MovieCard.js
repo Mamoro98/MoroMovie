@@ -7,6 +7,7 @@ import {
   View,
 } from "react-native";
 import React from "react";
+import { imagesBaseUrl500 } from "../api/moviedb";
 
 const MovieCard = ({ item, handleClick }) => {
   let { width, height } = Dimensions.get("window");
@@ -18,7 +19,7 @@ const MovieCard = ({ item, handleClick }) => {
           width: width * 0.6,
           height: height * 0.4,
         }}
-        source={require("../assets/images/moviePoster1.png")}
+        source={{ uri: imagesBaseUrl500(item.poster_path) }}
         className=" rounded-2xl"
       />
     </TouchableWithoutFeedback>

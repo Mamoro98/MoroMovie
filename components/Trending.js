@@ -7,16 +7,17 @@ import { useNavigation } from "@react-navigation/native";
 const Trending = ({ trending }) => {
   let { width, height } = Dimensions.get("window");
   const nav = useNavigation();
-  function handleClick({ item }) {
-    nav.navigate("Movie", item);
-  }
+
   return (
     <View className=" flex-col ">
       <Text className="m-5 text-white text-xl mb-5">Trending</Text>
       <Carousel
         data={trending}
         renderItem={({ item }) => (
-          <MovieCard item={item} handleClick={handleClick} />
+          <MovieCard
+            item={item}
+            handleClick={() => nav.navigate("Movie", item)}
+          />
         )}
         firstItem={1}
         inactiveSlideOpacity={0.6}

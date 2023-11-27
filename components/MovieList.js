@@ -10,11 +10,11 @@ import React from "react";
 import { styles } from "../theme";
 import { useNavigation } from "@react-navigation/native";
 import { Dimensions } from "react-native";
+import { imagesBaseUrl185 } from "../api/moviedb";
 
 const MovieList = ({ data, title, showSeeAllBtn = true }) => {
   const nav = useNavigation();
   let { width, height } = Dimensions.get("window");
-
   let movieName = "The Avengers EndGame";
   return (
     <View className="flex-col">
@@ -35,7 +35,7 @@ const MovieList = ({ data, title, showSeeAllBtn = true }) => {
             >
               <View className="mx-2 flex-col items-center mt-5">
                 <Image
-                  source={require("../assets/images/moviePoster2.png")}
+                  source={{ uri: imagesBaseUrl185(item.poster_path) }}
                   style={{
                     width: width * 0.33,
                     height: height * 0.22,
@@ -43,9 +43,9 @@ const MovieList = ({ data, title, showSeeAllBtn = true }) => {
                   className="rounded-3xl"
                 />
                 <Text className="text-white mt-1">
-                  {movieName.length > 14
-                    ? movieName.slice(0, 14) + "..."
-                    : movieName}
+                  {item.title.length > 14
+                    ? item.title.slice(0, 14) + "..."
+                    : item.title}
                 </Text>
               </View>
             </TouchableOpacity>

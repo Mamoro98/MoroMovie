@@ -2,20 +2,20 @@ import { Dimensions, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import * as Progress from "react-native-progress";
 import { theme } from "../theme";
-const Loading = () => {
+const Loading = ({ w, h, t, s }) => {
   let { width, height } = Dimensions.get("window");
 
   return (
     <View
       className="flex-row justify-center items-center"
       style={{
-        width: width,
-        height: height,
+        width: w ? w : width,
+        height: h ? h : height,
       }}
     >
       <Progress.CircleSnail
-        thickness={12}
-        size={160}
+        thickness={t ? t : 12}
+        size={s ? s : 160}
         color={theme.background}
       />
     </View>

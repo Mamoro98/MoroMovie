@@ -10,25 +10,25 @@ import SearchScreen from "../screens/SearchScreen";
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
-function HomeTabs() {
-  return (
-    <Tab.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Tab.Screen name="Home" component={HomeScreen} />
-    </Tab.Navigator>
-  );
-}
+// function HomeTabs() {
+//   return (
+//     <Tab.Navigator
+//       screenOptions={{
+//         headerShown: false,
+//       }}
+//     >
+//       <Tab.Screen name="Home" component={HomeScreen} />
+//     </Tab.Navigator>
+//   );
+// }
 
 export default function AppNav() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Home2" headerShown="false">
         <Stack.Screen
           name="Home2"
-          component={HomeTabs}
+          component={HomeScreen}
           options={{
             headerShown: false,
           }}
